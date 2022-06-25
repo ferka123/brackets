@@ -1,8 +1,8 @@
 module.exports = function check(str, bracketsConfig) {
-  let tempStr='';
+  tempStr='';
   while (tempStr!=str) {
     tempStr=str;
-    bracketsConfig.forEach(item=>str=str.split(item.join('')).join(''));
+    bracketsConfig.forEach(item=>str=str.replaceAll(item.join(''),''));
   }
   return str=='';
 }
